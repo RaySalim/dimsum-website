@@ -4,6 +4,45 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Noto Serif SC', ui-serif, Georgia, 'Songti SC', serif;
+
+    --color-china-red: #C8102E;
+    --color-china-gold: #FFD700;
+    --color-china-dark-red: #8B0000;
+    --color-china-ink: #1a1a2e;
+    --color-china-paper: #faf7f0;
+    --color-china-jade: #00a86b;
+
+    /* Formula 1 collaboration palette */
+    --color-f1-red: #E10620;
+    --color-f1-dark-red: #B8001F;
+    --color-f1-black: #0A0A0A;
+    --color-f1-white: #F5F5F5;
+    --color-f1-silver: #C0C0C0;
+    --color-f1-bronze: #CD7F00;
+    --color-f1-yellow: #F9D020;
+    --color-f1-gold: #D1AF66;
+    --color-f1-checkered: #222222;
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.bg-checkered {
+    background-image:
+        linear-gradient(45deg, var(--color-f1-checkered) 25%, transparent 25%, transparent 75%, var(--color-f1-checkered) 75%),
+        linear-gradient(45deg, var(--color-f1-checkered) 25%, var(--color-f1-white) 25%, var(--color-f1-white) 75%, var(--color-f1-checkered) 75%);
+    background-size: 2rem 2rem;
+    background-position: 0 0, 1rem 1rem;
 }
